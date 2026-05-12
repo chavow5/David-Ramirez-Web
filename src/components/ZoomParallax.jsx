@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 
 // plantilla para hacer zoom en imagen adaptada a mobile
 export default function ZoomParallax({ imageUrl }) {
@@ -45,3 +45,4 @@ export default function ZoomParallax({ imageUrl }) {
 
 // en App.js
 // <ZoomParallax imageUrl="url-imagen" />
+
