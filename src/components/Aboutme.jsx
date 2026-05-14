@@ -1,16 +1,17 @@
-﻿import { FaReact, FaJs, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaPython, FaDownload, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import { useState } from "react";
+import { FaReact, FaJs, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaPython, FaDownload, FaMapMarkerAlt, FaEnvelope, FaWhatsapp, FaTimes } from "react-icons/fa";
 import { SiTailwindcss, SiPostman } from "react-icons/si";
 
 const skills = [
-  { name: "React",       icon: <FaReact />,       color: "#61dafb" },
-  { name: "JavaScript",  icon: <FaJs />,           color: "#f7df1e" },
-  { name: "APIs REST",   icon: <SiPostman />,      color: "#ff6c37" },
-  { name: "Tailwind",    icon: <SiTailwindcss />,  color: "#38bdf8" },
-  { name: "HTML5",       icon: <FaHtml5 />,        color: "#e34f26" },
-  { name: "CSS3",        icon: <FaCss3Alt />,      color: "#1572b6" },
-  { name: "GitHub",      icon: <FaGithub />,       color: "#e0e0e0" },
-  { name: "Node.js",     icon: <FaNodeJs />,       color: "#68a063" },
-  { name: "Python",      icon: <FaPython />,       color: "#3572a5" },
+  { name: "React", icon: <FaReact />, color: "#61dafb" },
+  { name: "JavaScript", icon: <FaJs />, color: "#f7df1e" },
+  { name: "APIs REST", icon: <SiPostman />, color: "#ff6c37" },
+  { name: "Tailwind", icon: <SiTailwindcss />, color: "#38bdf8" },
+  { name: "HTML5", icon: <FaHtml5 />, color: "#e34f26" },
+  { name: "CSS3", icon: <FaCss3Alt />, color: "#1572b6" },
+  { name: "GitHub", icon: <FaGithub />, color: "#e0e0e0" },
+  { name: "Node.js", icon: <FaNodeJs />, color: "#68a063" },
+  { name: "Python", icon: <FaPython />, color: "#3572a5" },
 ];
 
 const softSkills = [
@@ -19,8 +20,8 @@ const softSkills = [
 ];
 
 const idiomas = [
-  { idioma: "Español", nivel: "Nativo",  flag: "🇦🇷" },
-  { idioma: "Inglés",  nivel: "B1 – B2", flag: "🇺🇸" },
+  { idioma: "Español", nivel: "Nativo", flag: "🇦🇷" },
+  { idioma: "Inglés", nivel: "B1 – B2", flag: "🇺🇸" },
 ];
 
 const SectionTitle = ({ children }) => (
@@ -33,6 +34,7 @@ const SectionTitle = ({ children }) => (
 );
 
 const AboutMe = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <section
       id="aboutme"
@@ -58,7 +60,7 @@ const AboutMe = () => {
         {/* Heading */}
         <div className="text-center mb-14">
           <p className="text-xs uppercase tracking-[0.3em] mb-3" style={{ color: "#74b9e8" }}>
-            Conóceme
+            Un poco sobre mi.
           </p>
           <h2 className="text-4xl sm:text-5xl font-black">
             Sobre <span className="text-gradient-cyber animate-gradient" style={{ backgroundSize: "200% 200%" }}>Mí</span>
@@ -190,15 +192,35 @@ const AboutMe = () => {
 
           {/* ── Right sidebar ── */}
           <aside className="w-full lg:w-80 space-y-5">
-            {/* Download CV */}
-            <a
-              href="/CV_DavidRamirez.pdf"
-              download
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300"
+            {/* Medium size photo */}
+            <div className="flex justify-center mb-4">
+               <img
+                  src="images/perfilchavo.png"
+                  alt="David Ramirez"
+                  className="w-48 h-48 rounded-2xl object-cover shadow-lg border border-[rgba(116,185,232,0.2)]"
+                  style={{
+                    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(116,185,232,0.15)",
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-5px)";
+                    e.currentTarget.style.boxShadow = "0 15px 35px rgba(0, 0, 0, 0.6), 0 0 30px rgba(116,185,232,0.3)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(116,185,232,0.15)";
+                  }}
+                />
+            </div>
+            {/* Download CV – opens modal */}
+            <button
+              onClick={() => setShowModal(true)}
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer"
               style={{
                 background: "linear-gradient(135deg, #74b9e8, #1a6ea8)",
                 color: "#000",
                 boxShadow: "0 0 25px rgba(116,185,232,0.3)",
+                border: "none",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-3px)";
@@ -210,6 +232,42 @@ const AboutMe = () => {
               }}
             >
               <FaDownload /> Descargar CV
+            </button>
+
+            {/* WhatsApp alert */}
+            <a
+              href="https://wa.me/5493804201334?text=Hola%20David%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20contactarme%20contigo."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 w-full rounded-xl p-4 transition-all duration-300"
+              style={{
+                background: "rgba(37,211,102,0.08)",
+                border: "1px solid rgba(37,211,102,0.35)",
+                boxShadow: "0 0 18px rgba(37,211,102,0.1)",
+                textDecoration: "none",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(37,211,102,0.15)";
+                e.currentTarget.style.borderColor = "rgba(37,211,102,0.7)";
+                e.currentTarget.style.boxShadow = "0 0 28px rgba(37,211,102,0.25)";
+                e.currentTarget.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "rgba(37,211,102,0.08)";
+                e.currentTarget.style.borderColor = "rgba(37,211,102,0.35)";
+                e.currentTarget.style.boxShadow = "0 0 18px rgba(37,211,102,0.1)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              <FaWhatsapp size={20} style={{ color: "#25d366", flexShrink: 0, marginTop: "2px" }} />
+              <div>
+                <p className="text-sm font-semibold" style={{ color: "#25d366" }}>
+                  ¿Querés contactarme?
+                </p>
+                <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.6)" }}>
+                  Escribime directamente por WhatsApp y te respondo a la brevedad 🚀
+                </p>
+              </div>
             </a>
 
             {/* Contact info */}
@@ -227,9 +285,9 @@ const AboutMe = () => {
               {/* Social links */}
               <div className="flex flex-wrap gap-2 pt-2">
                 {[
-                  { label: "GitHub",    href: "https://github.com/chavow5" },
-                  { label: "LinkedIn",  href: "https://www.linkedin.com/in/david-ramirez-031015253/" },
-                  { label: "Twitter",   href: "https://x.com/Chavo651" },
+                  { label: "GitHub", href: "https://github.com/chavow5" },
+                  { label: "LinkedIn", href: "https://www.linkedin.com/in/david-ramirez-031015253/" },
+                  { label: "Twitter", href: "https://x.com/Chavo651" },
                   { label: "Instagram", href: "https://www.instagram.com/davidramirez_651/" },
                 ].map(({ label, href }) => (
                   <a
@@ -289,6 +347,75 @@ const AboutMe = () => {
           </aside>
         </div>
       </div>
+
+      {/* ── CV Modal ── */}
+      {showModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ background: "rgba(0,0,0,0.75)", backdropFilter: "blur(8px)" }}
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            className="relative rounded-2xl p-8 max-w-sm w-full text-center"
+            style={{
+              background: "linear-gradient(135deg, #0d1b2a, #080f1a)",
+              border: "1px solid rgba(116,185,232,0.25)",
+              boxShadow: "0 0 60px rgba(116,185,232,0.15), 0 25px 50px rgba(0,0,0,0.5)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 transition-opacity duration-200"
+              style={{ color: "rgba(255,255,255,0.4)", background: "none", border: "none", cursor: "pointer" }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.4")}
+            >
+              <FaTimes size={16} />
+            </button>
+
+            {/* Icon */}
+            <div
+              className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
+              style={{ background: "rgba(37,211,102,0.12)", border: "1px solid rgba(37,211,102,0.35)" }}
+            >
+              <FaWhatsapp size={28} style={{ color: "#25d366" }} />
+            </div>
+
+            <h3 className="text-xl font-bold mb-2">¡Por cuestiones de seguridad!</h3>
+            <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)", lineHeight: "1.6" }}>
+              El CV no está disponible para descarga directa.
+              <br />
+              Contactame por <span style={{ color: "#25d366", fontWeight: 600 }}>WhatsApp</span> y
+              te lo envío a la brevedad 🚀
+            </p>
+
+            <a
+              href="https://wa.me/5493804201334?text=Hola%20David%2C%20vi%20tu%20portfolio%20y%20quisiera%20pedirte%20el%20CV."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-sm transition-all duration-300"
+              style={{
+                background: "linear-gradient(135deg, #25d366, #128c4a)",
+                color: "#fff",
+                textDecoration: "none",
+                boxShadow: "0 0 20px rgba(37,211,102,0.3)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 0 30px rgba(37,211,102,0.5)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 0 20px rgba(37,211,102,0.3)";
+              }}
+            >
+              <FaWhatsapp size={16} /> Enviame un WhatsssAPP
+            </a>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

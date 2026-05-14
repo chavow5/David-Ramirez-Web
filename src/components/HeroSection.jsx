@@ -3,9 +3,9 @@ import fondo from "../assets/fondo2.png";
 
 const PHRASES = [
   "Full Stack Web Developer.",
-  "Diseñador de Experiencias.",
-  "Solucionador de Problemas.",
-  "Creador Digital.",
+  "Programador y Desarrollador de Software.",
+  "Diseñador Gráfico.",
+  "Deportista.",
 ];
 
 const TypewriterText = () => {
