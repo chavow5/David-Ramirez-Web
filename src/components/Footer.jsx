@@ -1,4 +1,4 @@
-﻿import { FaInstagram, FaGithub, FaLinkedin, FaArrowUp, FaHeart } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaLinkedin, FaArrowUp, FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -62,8 +62,9 @@ const Footer = () => {
               {[
                 { label: "Inicio", href: "#inicio" },
                 { label: "Sobre mí", href: "#aboutme" },
-                { label: "Proyectos", href: "#proyectos" },
+                { label: "Proyectos", href: "#Mis Proyectos" },
                 { label: "Certificados", href: "#certificados" },
+                { label: "Instagram", href: "#instagram" },
                 { label: "Contacto", href: "#contacto" },
               ].map(({ label, href }) => (
                 <li key={href}>

@@ -59,9 +59,9 @@ const AboutMe = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-14">
-          <p className="text-xs uppercase tracking-[0.3em] mb-3" style={{ color: "#74b9e8" }}>
+        {/* <p className="text-xs uppercase tracking-[0.3em] mb-3" style={{ color: "#74b9e8" }}> 
             Un poco sobre mi.
-          </p>
+          </p> */}  
           <h2 className="text-4xl sm:text-5xl font-black">
             Sobre <span className="text-gradient-cyber animate-gradient" style={{ backgroundSize: "200% 200%" }}>Mí</span>
           </h2>
@@ -236,7 +236,7 @@ const AboutMe = () => {
 
             {/* WhatsApp alert */}
             <a
-              href="https://wa.me/5493804201334?text=Hola%20David%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20contactarme%20contigo."
+              href="https://wa.me/5493804201334?text=Hola"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-start gap-3 w-full rounded-xl p-4 transition-all duration-300"

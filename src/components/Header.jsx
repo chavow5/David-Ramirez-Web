@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/logodavidramirez.png";
 
@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Sobre mí", href: "#aboutme" },
   { label: "Proyectos", href: "#Mis Proyectos" },
   { label: "Certificados", href: "#certificados" },
+  { label: "Instagram", href: "#instagram" },
   { label: "Contacto", href: "#contacto" },
 ];
 

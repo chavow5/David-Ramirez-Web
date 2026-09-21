@@ -4,6 +4,7 @@ import Proyectos from '../components/Proyectos';
 import Certificados from '../components/Certificados';
 import Contactos from '../components/Contactos';
 import Enlinea from '../components/Enlinea';
+import InstagramSection from '../components/InstagramSection';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -62,6 +63,16 @@ const Home = () => {
         viewport={{ once: true }}
       >
         <Certificados />
+      </motion.div>
+
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 0.6, delay: 0.9 }}
+        viewport={{ once: true }}
+      >
+        <InstagramSection />
       </motion.div>
 
       <motion.div

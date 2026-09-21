@@ -1,4 +1,4 @@
-﻿import { FaWhatsapp, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane } from "react-icons/fa";
 import { useState } from "react";
 
 const Contacto = () => {
@@ -100,22 +100,19 @@ const Contacto = () => {
             {/* Social buttons */}
             <div className="flex gap-3 flex-wrap">
               <a
-                href="https://wa.me/543804201334?text=Hola%20David,%20vi%20tu%20portfolio%20y%20me%20gustaría%20hablar%20contigo."
+                href="https://wa.me/5493804201334?text=Hola"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200"
                 style={{
-                  background: "linear-gradient(135deg, #22c55e, #16a34a)",
+                  backgroundColor: "#25D366",
                   color: "#fff",
-                  boxShadow: "0 0 20px rgba(34,197,94,0.3)",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-2px)";
-                  e.currentTarget.style.boxShadow = "0 0 30px rgba(34,197,94,0.45)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 0 20px rgba(34,197,94,0.3)";
                 }}
               >
                 <FaWhatsapp size={18} /> WhatsApp
@@ -149,7 +146,7 @@ const Contacto = () => {
                 O escaneá el QR de WhatsApp
               </p>
               <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/543804201334?text=Hola%20David,%20vi%20tu%20portfolio%20y%20me%20gustaría%20hablar%20contigo."
+                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/5493804201334?text=Hola"
                 alt="QR para WhatsApp"
                 className="w-36 h-36 rounded-xl"
                 style={{ border: "1px solid rgba(116,185,232,0.15)", filter: "invert(0.05)" }}

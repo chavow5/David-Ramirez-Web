@@ -1,4 +1,5 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import fondo from "../assets/fondo2.png";
 
 const PHRASES = [
@@ -63,7 +64,7 @@ const HeroSection = () => {
     };
   }, []);
 
-  const scaleValue = Math.min(1 + scrollPosition * 0.0008, 1.2);
+  const scaleValue = Math.min(1 + scrollPosition * 0.0008, 5.5);
   const blurValue = Math.min(scrollPosition * 0.005, 6);
 
   return (
@@ -130,7 +131,7 @@ const HeroSection = () => {
             className="text-xs font-semibold uppercase tracking-[0.3em]"
             style={{ color: "#74b9e8" }}
           >
-            Portfolio 2025
+            Portfolio 2026
           </span>
           <div
             style={{
@@ -210,6 +211,17 @@ const HeroSection = () => {
           >
             Contactame
           </a>
+          <a
+            href="https://wa.me/5493804201334?text=Hola"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm uppercase tracking-wider text-white transition-all duration-200 hover:scale-105 active:scale-95"
+            style={{
+              backgroundColor: "#25D366",
+            }}
+          >
+            <FaWhatsapp size={18} /> WhatsApp
+          </a>
         </div>
 
         {/* Scroll indicator */}
@@ -218,7 +230,7 @@ const HeroSection = () => {
           style={{ opacity: 0, animation: "fadeInUp 0.8s ease 1.2s forwards" }}
         >
           <span className="text-xs uppercase tracking-widest" style={{ color: "rgba(116,185,232,0.5)" }}>
-            Scroll
+            
           </span>
           <div
             style={{
