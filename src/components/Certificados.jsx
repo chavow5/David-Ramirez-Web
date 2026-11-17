@@ -3,6 +3,9 @@ import { FaExpand } from "react-icons/fa";
 
 const certificados = [
   { nombre: "Full Stack Web Developer – Digital House", imagen: "./certificados/fullstack.png", issuer: "Digital House" },
+  { nombre: "Programador Web Full Stack – Polo Tecnológico", imagen: "./certificados/POLO TECNOLÓGICO_page-0001.jpg", issuer: "Polo Tecnológico" },
+  { nombre: "Tiendanube Partner Desarrollador – Tiendanube", imagen: "./certificados/tienda nube.png", issuer: "Tiendanube" },
+  { nombre: "Inglés Técnico – Polo Tecnológico", imagen: "./certificados/ingles tecnico.png", issuer: "Polo Tecnológico" },
   { nombre: "Desarrollo Web Responsive – Domestika",   imagen: "./certificados/webresponsive.png", issuer: "Domestika" },
   { nombre: "Diseño Gráfico – Juventudes",             imagen: "./certificados/diseñografico.png", issuer: "Juventudes" },
   { nombre: "Programación en Javascript – Domestika",  imagen: "./certificados/programacion.png", issuer: "Domestika" },

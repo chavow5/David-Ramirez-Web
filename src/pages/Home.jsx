@@ -42,7 +42,7 @@ const Home = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <Proyectos />
+        <Enlinea />
       </motion.div>
 
       <motion.div
@@ -52,7 +52,7 @@ const Home = () => {
         transition={{ duration: 0.6, delay: 0.6 }}
         viewport={{ once: true }}
       >
-        <Enlinea />
+        <Proyectos />
       </motion.div>
 
       <motion.div

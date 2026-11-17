@@ -62,7 +62,7 @@ const Footer = () => {
               {[
                 { label: "Inicio", href: "#inicio" },
                 { label: "Sobre mí", href: "#aboutme" },
-                { label: "Proyectos", href: "#Mis Proyectos" },
+                { label: "Proyectos", href: "#proyectos" },
                 { label: "Certificados", href: "#certificados" },
                 { label: "Instagram", href: "#instagram" },
                 { label: "Contacto", href: "#contacto" },
